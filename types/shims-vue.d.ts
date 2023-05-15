@@ -11,3 +11,4 @@ declare module "*.scss" {
 
 declare module "vue-virtual-scroller";
 declare module "vuedraggable/src/vuedraggable";
+declare module "@liveqing/liveplayer-v3";

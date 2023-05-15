@@ -11,6 +11,7 @@ import removeConsole from "vite-plugin-remove-console";
 import themePreprocessorPlugin from "@pureadmin/theme";
 import VueI18nPlugin from "@intlify/unplugin-vue-i18n/vite";
 import { genScssMultipleScopeVars } from "../src/layout/theme";
+import copy from "rollup-plugin-copy";
 
 export function getPluginsList(
   command: string,
@@ -21,6 +22,14 @@ export function getPluginsList(
   const lifecycle = process.env.npm_lifecycle_event;
   return [
     vue(),
+    copy({
+      targets: [
+        {
+          src: "node_modules/@liveqing/liveplayer-v3/dist/component/liveplayer-lib.min.js",
+          dest: "public/js"
+        }
+      ]
+    }),
     VueI18nPlugin({
       runtimeOnly: true,
       compositionOnly: true,
