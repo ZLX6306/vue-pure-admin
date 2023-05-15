@@ -62,14 +62,10 @@
   </el-card>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts" name="videoDemo">
 import VideoPlay from "@iconify-icons/ep/video-play";
 import { useRenderIcon } from "@/components/ReIcon/src/hooks";
-defineOptions({
-  name: "videoDemo"
-});
 import { computed, getCurrentInstance } from "vue";
-
 import LivePlayer from "@liveqing/liveplayer-v3";
 
 const mp4URL = computed(() => {

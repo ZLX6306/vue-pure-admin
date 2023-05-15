@@ -12,6 +12,7 @@ import themePreprocessorPlugin from "@pureadmin/theme";
 import VueI18nPlugin from "@intlify/unplugin-vue-i18n/vite";
 import { genScssMultipleScopeVars } from "../src/layout/theme";
 import copy from "rollup-plugin-copy";
+import vueSetupExtend from "unplugin-vue-setup-extend-plus/vite";
 
 export function getPluginsList(
   command: string,
@@ -30,6 +31,8 @@ export function getPluginsList(
         }
       ]
     }),
+    // name 可以写在 script 标签上
+    vueSetupExtend({}),
     VueI18nPlugin({
       runtimeOnly: true,
       compositionOnly: true,
